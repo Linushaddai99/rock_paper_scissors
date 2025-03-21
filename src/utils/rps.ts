@@ -31,3 +31,11 @@ export const checkAdvancedWinner = (playerChoice: number, computerChoice: number
     if (playerChoice === 5 && (computerChoice === 1 || computerChoice === 3)) return 'player';
     return 'computer';
 }
+
+export function getRandomNumber1to3() {
+    return Math.floor(Math.random() * 3) + 1;
+}
+
+export function getRandomNumber1to5() {
+    return Math.floor(Math.random() * 5) + 1;
+}
