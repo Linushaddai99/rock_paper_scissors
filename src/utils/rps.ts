@@ -1,41 +1,44 @@
+export const rpsChoices = ["rock", "paper", "scissors"];
 
-export const rpsChoices = [
-    { name: 'rock', id: 1 },
-    { name: 'paper', id: 2 },
-    { name: 'scissors', id: 3 },
-]
+export const rpslsChoices = ["rock", "paper", "scissors", "lizard", "spock"];
 
+export const checkBasicWinner = (playerChoice: string, computerChoice: string) => {
+    if (playerChoice === computerChoice) return "draw";
+    if (
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")
+    ) {
+        return "player";
+    }
+    return "computer";
+};
 
-export const checkBasicWinner = (playerChoice: number, computerChoice: number) => {
-    if (playerChoice === computerChoice) return 'draw';
-    if (playerChoice === 1 && computerChoice === 3) return 'player';
-    if (playerChoice === 2 && computerChoice === 1) return 'player';
-    if (playerChoice === 3 && computerChoice === 2) return 'player';
-    return 'computer';
+export const checkAdvancedWinner = (playerChoice: string, computerChoice: string) => {
+    if (playerChoice === computerChoice) return "draw";
+    if (
+        (playerChoice === "rock" && (computerChoice === "scissors" || computerChoice === "lizard")) ||
+        (playerChoice === "paper" && (computerChoice === "rock" || computerChoice === "spock")) ||
+        (playerChoice === "scissors" && (computerChoice === "paper" || computerChoice === "lizard")) ||
+        (playerChoice === "lizard" && (computerChoice === "paper" || computerChoice === "spock")) ||
+        (playerChoice === "spock" && (computerChoice === "rock" || computerChoice === "scissors"))
+    ) {
+        return "player";
+    }
+    return "computer";
+};
+
+// Function to get a random choice from RPS
+export function getRandomRPSChoice() {
+    return rpsChoices[Math.floor(Math.random() * rpsChoices.length)];
 }
 
-export const rpslsChoices = [
-    { name: 'rock', id: 1 },
-    { name: 'paper', id: 2 },
-    { name: 'scissors', id: 3 },
-    { name: 'lizard', id: 4 },
-    { name: 'spock', id: 5 },
-]
-
-export const checkAdvancedWinner = (playerChoice: number, computerChoice: number) => {
-    if (playerChoice === computerChoice) return 'draw';
-    if (playerChoice === 1 && (computerChoice === 3 || computerChoice === 4)) return 'player';
-    if (playerChoice === 2 && (computerChoice === 1 || computerChoice === 5)) return 'player';
-    if (playerChoice === 3 && (computerChoice === 2 || computerChoice === 4)) return 'player';
-    if (playerChoice === 4 && (computerChoice === 2 || computerChoice === 5)) return 'player';
-    if (playerChoice === 5 && (computerChoice === 1 || computerChoice === 3)) return 'player';
-    return 'computer';
+// Function to get a random choice from RPSLS
+export function getRandomRPSLSChoice() {
+    return rpslsChoices[Math.floor(Math.random() * rpslsChoices.length)];
 }
 
-export function getRandomNumber1to3() {
-    return Math.floor(Math.random() * 3) + 1;
-}
-
-export function getRandomNumber1to5() {
-    return Math.floor(Math.random() * 5) + 1;
-}
+// Example Usage
+const playerMove = "rock";
+const computerMove = getRandomRPSChoice();
+console.log(`Player: ${playerMove}, Computer: ${computerMove}, Winner: ${checkBasicWinner(playerMove, computerMove)}`);
