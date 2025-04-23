@@ -4,8 +4,10 @@ import {motion, MotionConfig} from 'framer-motion'
 import GameIcon from './GameIcon'
 import { div } from 'framer-motion/client'
 
+type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock";
+
 type BasicSectionProps = {
-    setPlayersChoice: React.Dispatch<React.SetStateAction<string>>
+    setPlayersChoice: React.Dispatch<React.SetStateAction<"" | Choice>>
     playersChoice: string
 }
 

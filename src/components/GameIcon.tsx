@@ -6,10 +6,12 @@ import lizard from '../assets/icon-lizard.svg'
 import spock from '../assets/icon-spock.svg'
 import {motion} from 'framer-motion'
 
+type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock";
+
 type GameIconProps = {
-    name: string;
+    name: Choice | '';
     playersChoice: string
-    setPlayersChoice: React.Dispatch<React.SetStateAction<string>>
+    setPlayersChoice: React.Dispatch<React.SetStateAction<"" | Choice>>
 }
 
 
