@@ -1,31 +1,8 @@
-type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock";
+import { Choice, Rules } from "./type";
 
 export const rpsChoices = ["rock", "paper", "scissors"];
 
 export const rpslsChoices = ["rock", "paper", "scissors", "lizard", "spock"];
-
-type Rules = {
-    rock: {
-        scissors: string;
-        lizard: string;
-    };
-    paper: {
-        rock: string;
-        spock: string;
-    };
-    scissors: {
-        paper: string;
-        lizard: string;
-    };
-    lizard: {
-        spock: string;
-        paper: string;
-    };
-    spock: {
-        scissors: string;
-        rock: string;
-    };
-}
 
 const rules: Rules = {
     rock: { 
@@ -98,9 +75,4 @@ export function getComputerChoice(level: string) {
         return rpslsChoices[Math.floor(Math.random() * rpslsChoices.length)];
     }
 }
-
-// Function to get a random choice from RPSLS
-// export function getRandomRPSLSChoice() {
-    
-// }
 

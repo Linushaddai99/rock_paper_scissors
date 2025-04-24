@@ -3,14 +3,8 @@ import {motion, MotionConfig} from 'framer-motion'
 import pentagon from '../assets/bg-pentagon.svg'
 import GameIcon from './GameIcon'
 
-type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock";
 
-type AdvancedSectionProps = {
-    setPlayersChoice: React.Dispatch<React.SetStateAction<"" | Choice>>
-    playersChoice: string
-}
-
-const AdvancedSection: React.FC<AdvancedSectionProps> = ({setPlayersChoice, playersChoice}) => {
+const AdvancedSection = () => {
   return (
     <div className=' min-h-[70%] flex flex-col justify-center items-center'>
       <div className='relative border w-full'>
@@ -25,7 +19,7 @@ const AdvancedSection: React.FC<AdvancedSectionProps> = ({setPlayersChoice, play
             initial={{opacity: 0, top: 300, rotate: '-180deg'}}
             animate={{opacity: 1, top: 16, rotate: "0deg"}}
             >
-            <GameIcon name='paper' setPlayersChoice={setPlayersChoice} playersChoice={playersChoice} />
+            <GameIcon name='paper' />
           </motion.div>
 
           <motion.div 
@@ -33,7 +27,7 @@ const AdvancedSection: React.FC<AdvancedSectionProps> = ({setPlayersChoice, play
           initial={{opacity: 0, top: 300, rotate: '-180deg'}}
           animate={{opacity: 1, top: -120, rotate: "0deg"}}
             >
-            <GameIcon name='scissors' setPlayersChoice={setPlayersChoice} playersChoice={playersChoice} />
+            <GameIcon name='scissors' />
           </motion.div>
           
           <motion.div
@@ -41,7 +35,7 @@ const AdvancedSection: React.FC<AdvancedSectionProps> = ({setPlayersChoice, play
               initial={{opacity: 0, top: 400, rotate: '-180deg'}}
               animate={{opacity: 1, top: 208, rotate: "0deg"}}
             >
-            <GameIcon name='rock' setPlayersChoice={setPlayersChoice} playersChoice={playersChoice} />
+            <GameIcon name='rock' />
           </motion.div>
 
           <motion.div 
@@ -49,7 +43,7 @@ const AdvancedSection: React.FC<AdvancedSectionProps> = ({setPlayersChoice, play
             initial={{opacity: 0, top: 400, rotate: '-180deg'}}
             animate={{opacity: 1, top: 208, rotate: "0deg"}}
             >
-            <GameIcon name='lizard' setPlayersChoice={setPlayersChoice} playersChoice={playersChoice} />
+            <GameIcon name='lizard' />
           </motion.div>
 
           <motion.div 
@@ -57,7 +51,7 @@ const AdvancedSection: React.FC<AdvancedSectionProps> = ({setPlayersChoice, play
             initial={{opacity: 0, top: 300, rotate: '-180deg'}}
             animate={{opacity: 1, top: 16, rotate: "0deg"}}
             >
-            <GameIcon name='spock' setPlayersChoice={setPlayersChoice} playersChoice={playersChoice} />
+            <GameIcon name='spock' />
           </motion.div>
         </MotionConfig>
 

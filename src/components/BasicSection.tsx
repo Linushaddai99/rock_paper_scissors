@@ -2,18 +2,12 @@ import React from 'react'
 import triangle from '../assets/bg-triangle.svg'
 import {motion, MotionConfig} from 'framer-motion'
 import GameIcon from './GameIcon'
-import { div } from 'framer-motion/client'
 
-type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock";
 
-type BasicSectionProps = {
-    setPlayersChoice: React.Dispatch<React.SetStateAction<"" | Choice>>
-    playersChoice: string
-}
 
-const BasicSection: React.FC<BasicSectionProps> = ({setPlayersChoice, playersChoice}) => {
+const BasicSection = () => {
   return (
-    <div className=' min-h-[70%] flex flex-col justify-center items-center'>
+    <div className=' min-h-[70%] flex flex-col justify-center items-center border border-amber-300'>
         <div className='relative my-auto w-full'>
             <MotionConfig
             transition={{
@@ -26,7 +20,7 @@ const BasicSection: React.FC<BasicSectionProps> = ({setPlayersChoice, playersCho
                     initial={{opacity: 0, top: 200,  rotate: '-180deg'}}
                     animate={{opacity: 1, top: -40,  rotate: "0deg"}}
                     >
-                    <GameIcon name='paper' setPlayersChoice={setPlayersChoice} playersChoice={playersChoice} />
+                    <GameIcon name='paper'/>
                 </motion.div>
 
                 <motion.div 
@@ -34,7 +28,7 @@ const BasicSection: React.FC<BasicSectionProps> = ({setPlayersChoice, playersCho
                     initial={{opacity: 0, top: 200,  rotate: '-180deg'}}
                     animate={{opacity: 1, top: -40,  rotate: "0deg"}}
                     >
-                    <GameIcon name='scissors' setPlayersChoice={setPlayersChoice} playersChoice={playersChoice} />
+                    <GameIcon name='scissors' />
                 </motion.div>
                 
                 <motion.div 
@@ -42,7 +36,7 @@ const BasicSection: React.FC<BasicSectionProps> = ({setPlayersChoice, playersCho
                     initial={{opacity: 0, bottom: -200, rotate: '-180deg'}}
                     animate={{opacity: 1, bottom: -40, rotate: "0deg"}}
                     >
-                    <GameIcon name='rock' setPlayersChoice={setPlayersChoice} playersChoice={playersChoice} />
+                    <GameIcon name='rock' />
                 </motion.div>
             </MotionConfig>
 
