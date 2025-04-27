@@ -1,4 +1,4 @@
-export type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock";
+export type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock" | 'empty';
 
 export type Rules = {
     rock: {
@@ -24,8 +24,12 @@ export type Rules = {
 }
 
 export type State = {
-  playersChoice: string
-  computersChoice: string
+  playersChoice: Choice
+  computersChoice: Choice
   level: string
   score: number
+  result: {
+    winner: string
+    tag: string
+  }
 }

@@ -1,58 +1,84 @@
 import { Choice, Rules } from "./type";
 
-export const rpsChoices = ["rock", "paper", "scissors"];
+export const rpsChoices: Choice[] = ["rock", "paper", "scissors"];
 
-export const rpslsChoices = ["rock", "paper", "scissors", "lizard", "spock"];
+export const rpslsChoices: Choice[] = ["rock", "paper", "scissors", "lizard", "spock"];
 
 const rules: Rules = {
-    rock: { 
-        scissors: "Rock crushes Scissors", 
-        lizard: "Rock crushes Lizard" 
+    'rock': { 
+        'scissors': "Rock crushes Scissors", 
+        'lizard': "Rock crushes Lizard" 
     },
-    paper: { 
-        rock: "Paper covers Rock", 
-        spock: "Paper disproves Spock" 
+    'paper': { 
+        'rock': "Paper covers Rock", 
+        'spock': "Paper disproves Spock" 
     },
-    scissors: { 
-        paper: "Scissors cuts Paper", 
-        lizard: "Scissors decapitates Lizard" 
+    'scissors': { 
+        'paper': "Scissors cuts Paper", 
+        'lizard': "Scissors decapitates Lizard" 
     },
-    lizard: { 
-        spock: "Lizard poisons Spock", 
-        paper: "Lizard eats Paper" 
+    'lizard': { 
+        'spock': "Lizard poisons Spock", 
+        'paper': "Lizard eats Paper" 
     },
-    spock: { 
-        scissors: "Spock smashes Scissors", 
-        rock: "Spock vaporizes Rock" 
+    'spock': { 
+        'scissors': "Spock smashes Scissors", 
+        'rock': "Spock vaporizes Rock" 
     }
 };
 
 
 
 export const checkBasicWinner = (playerChoice: Choice, computerChoice: Choice) => {
-    if (playerChoice === computerChoice) return "draw";
+
+    if (playerChoice === computerChoice) {
+        return {
+            winner: 'draw',
+            tag: 'draw'
+        }
+    }
+
     if (
         (playerChoice === "rock" && computerChoice === "scissors") ||
         (playerChoice === "paper" && computerChoice === "rock") ||
         (playerChoice === "scissors" && computerChoice === "paper")
-    ) {
-        return "player";
+        ) {
+        return {
+            winner: 'player',
+            tag: rules[playerChoice][computerChoice as keyof typeof rules[typeof playerChoice]]
+        }
     }
-    return "computer";
+
+    return {
+        winner: 'computer',
+        tag: rules[computerChoice][playerChoice as keyof typeof rules[typeof computerChoice]]
+    }
 };
 
 export const checkAdvancedWinner = (playerChoice: Choice, computerChoice: Choice) => {
-    if (playerChoice === computerChoice) return "draw";
+    if (playerChoice === computerChoice) {
+        return {
+            winner: 'draw',
+            tag: 'draw'
+        }
+    }
+
     if (
         (playerChoice === "rock" && (computerChoice === "scissors" || computerChoice === "lizard")) ||
         (playerChoice === "paper" && (computerChoice === "rock" || computerChoice === "spock")) ||
         (playerChoice === "scissors" && (computerChoice === "paper" || computerChoice === "lizard")) ||
         (playerChoice === "lizard" && (computerChoice === "paper" || computerChoice === "spock")) ||
         (playerChoice === "spock" && (computerChoice === "rock" || computerChoice === "scissors"))
-    ) {
-        return "player";
+        ) {
+        return {
+            winner: 'player',
+            tag: rules[playerChoice][computerChoice as keyof typeof rules[typeof playerChoice]]
+        }
     }
-    return "computer";
+        return {
+            winner: 'computer',
+            tag: rules[computerChoice][playerChoice as keyof typeof rules[typeof computerChoice]]
+        }
 };
 
 
