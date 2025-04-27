@@ -20,8 +20,11 @@ npm run dev
 
 ## Screenshots
 ![Alt Text - Basic level image](./src/assets/basicstate.png)
+
 ![Alt Text - Advanced level image](./src/assets/advancedstate.png)
+
 ![Alt Text - Result image](./src/assets/resultstate.png)
+
 ![Alt Text - Rules image](./src/assets/rules.png)
 
 ## [Live site](https://spancheck.netlify.app/)

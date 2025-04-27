@@ -1,5 +1,6 @@
 import React from "react";
 import { useStateContext } from "../utils/useContext";
+import { easeInOut, motion } from "framer-motion";
 
 const ScoreHeader = () => {
   const contextData = useStateContext();
@@ -16,7 +17,14 @@ const ScoreHeader = () => {
       </div>
       <div className="flex flex-col items-center w-[90px] md:w-[120px] bg-[#f2f2f2] rounded-md p-2">
         <h1 className="text-[#2a46c0] text-xl font-semibold">SCORE</h1>
-        <h1 className="text-[#606e85] text-4xl font-bold">{state.score}</h1>
+        <motion.h1 
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{ease: easeInOut, delay: .9}}
+        className="text-[#606e85] text-4xl font-bold"
+        >
+          {state.score}
+        </motion.h1>
       </div>
     </div>
   );

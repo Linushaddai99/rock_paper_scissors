@@ -13,7 +13,7 @@ const ResultCard = () => {
     className='absolute md:-bottom-100 -bottom-60 left-0 py-3 w-full text-center text-[#f2f2f2]'
     initial={{opacity: 0 }}
     animate={{opacity: [0, 1, 0, 1, 0, 1] }}
-    transition={{duration: .7, ease: 'easeInOut', delay: .9}}
+    transition={{duration: 0.7, ease: 'easeInOut', delay: .8}}
     >
       <h2 className='text-3xl mb-4'>{state.result.tag === 'draw' ? '' : state.result.tag}</h2>
       <p className='text-4xl font-semibold mb-4'>{state.result.winner === 'player' ? 'YOU WIN' : state.result.winner === 'computer' ? 'YOU LOSE' : 'DRAW'}</p>
