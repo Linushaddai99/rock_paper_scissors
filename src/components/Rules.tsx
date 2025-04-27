@@ -21,7 +21,7 @@ const Rules: React.FC<RulesProp> = ({level, setShowRules}) => {
   return (
     <div id='container' onClick={handleClose} className='fixed inset-0 bg-black/40   z-50
         flex justify-center items-center' >
-        <div className='bg-white p-5 rounded-md w-[390px]'>
+        <div className='bg-white p-5 rounded-md max-w-[390px] w-[80%]'>
             <img src={level == 'basic' ? basicRules : advancedRules} alt="" />
         </div>
     </div>
