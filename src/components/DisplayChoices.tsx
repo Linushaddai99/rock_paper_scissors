@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import GameIcon from './GameIcon'
 import { motion } from 'framer-motion'
 import { useStateContext } from '../utils/useContext'
@@ -12,12 +12,17 @@ const DisplayChoices= () => {
     const contextData = useStateContext();
     const { state } = contextData;
 
-      const isMdUp = useIsMdUp();
+    const isMdUp = useIsMdUp();
 
-      const style = {
-        // borderRadius: '100px',
-        // boxShadow: 'hsl(214, 47%, 24%) 0px 0px 0px 30px, hsl(214, 47%, 23%) 0px 0px 0px 60px, hsl(214, 47%, 22%) 0px 0px 0px 90px'
-      }
+    const style = {
+        border: `${isMdUp ? "20px" : "15px"} solid #141539`,
+        background: '#141539',
+        padding: "20px",
+        width: `${isMdUp ? "150px" : "120px"}`,
+        height: `${isMdUp ? "150px" : "120px"}`,
+        borderRadius: '100%'
+      };
+
 
     return (
         <div>
@@ -62,11 +67,10 @@ const DisplayChoices= () => {
                                         </motion.div>
                                         <motion.div
                                             className='absolute opacity-80'
-                                            style={style}
                                             initial={{opacity: 0, right: 10, bottom: isMdUp ? -200 : 50, rotate: '0deg'}}
                                             animate={{opacity: 1, right: 10, bottom: isMdUp ? -200 : 50, rotate: '0deg'}}
                                             >
-                                            <GameIcon name='empty' />
+                                            <div style={style}></div>
                                         </motion.div>
                                     </div>
                                 </div>

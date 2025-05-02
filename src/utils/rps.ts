@@ -24,7 +24,8 @@ const rules: Rules = {
     'spock': { 
         'scissors': "Spock smashes Scissors", 
         'rock': "Spock vaporizes Rock" 
-    }
+    }, 
+    // 'empty': ''
 };
 
 

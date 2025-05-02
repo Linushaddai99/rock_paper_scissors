@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import triangle from '../assets/bg-triangle.svg'
 import {motion, MotionConfig} from 'framer-motion'
 import GameIcon from './GameIcon'

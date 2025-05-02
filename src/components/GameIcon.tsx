@@ -39,9 +39,9 @@ const GameIcon: React.FC<GameIconProps> = ({ name }) => {
 
   const style = {
     border: `${isMdUp ? "20px" : "15px"} solid ${borderColor}`,
-    background: `${name === 'empty' ? '#141539' : "#f2f2f2"}`,
+    background:  "#f2f2f2",
     padding: "20px",
-    boxShadow: `${name != 'empty' && "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset"}`,
+    boxShadow: "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
   };
 
   const icon =
@@ -82,10 +82,8 @@ const GameIcon: React.FC<GameIconProps> = ({ name }) => {
         onClick={() => {
           state.playersChoice.length === 0 && handlePlay();
         }}
-        // whileHover={{ scale: 1.15 }}
-        // whileTap={{ scale: 0.15 }}
       >
-        { name != 'empty' && <img className="" src={icon} alt="" />}
+        <img className="" src={icon} alt="" />
       </motion.div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useReducer, useState } from 'react'
 import ScoreHeader from '../components/ScoreHeader';
 import Footer from '../components/Footer';
 import { stateContext } from '../utils/useContext';
@@ -22,6 +22,7 @@ const Home = () => {
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [showRules, setShowRules] = useState(false)
 
   function reducer(state: State, action: any) {
     switch (action.type) {
@@ -54,8 +55,6 @@ const Home = () => {
         return state;
     }
   }
-
-  const [showRules, setShowRules] = useState(false)
 
 
   return (

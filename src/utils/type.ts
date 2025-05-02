@@ -1,4 +1,4 @@
-export type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock" | 'empty';
+export type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock";
 
 export type Rules = {
     rock: {
@@ -21,6 +21,8 @@ export type Rules = {
         scissors: string;
         rock: string;
     };
+
+    // empty: Choice
 }
 
 export type State = {

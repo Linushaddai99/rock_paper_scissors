@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import {motion, MotionConfig} from 'framer-motion'
 import pentagon from '../assets/bg-pentagon.svg'
 import GameIcon from './GameIcon'
@@ -7,6 +7,7 @@ import useIsMdUp from '../utils/useIsMdUp'
 
 const AdvancedSection = () => {
   const isMdUp = useIsMdUp();
+
   return (
     <div className='min-h-[100%] flex flex-col justify-center items-center'>
       <div className='relative my-auto w-full'>
