@@ -10,7 +10,7 @@ const ResultCard = () => {
 
   return (
     <motion.div 
-    className='absolute md:-bottom-100 -bottom-60 left-0 py-3 w-full text-center text-[#f2f2f2]'
+    className='absolute md:-bottom-100 -bottom-50 left-0 py-3 w-full text-center text-[#f2f2f2]'
     initial={{opacity: 0 }}
     animate={{opacity: [0, 1, 0, 1, 0, 1] }}
     transition={{duration: 0.7, ease: 'easeInOut', delay: .8}}
