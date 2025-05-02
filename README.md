@@ -27,7 +27,7 @@ npm run dev
 
 ![Alt Text - Rules image](./src/assets/rules.png)
 
-## [Live site](https://spancheck.netlify.app/)
+## [Live site]([https://spancheck.netlify.app/](https://fascinating-kheer-2cea43.netlify.app/))
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
